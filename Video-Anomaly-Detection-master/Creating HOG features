@@ -1,0 +1,25 @@
+### Calculating HOG features
+
+from sklearn.svm import SVC
+from sklearn import neighbors
+from sklearn import preprocessing
+   
+from skimage.feature import hog
+
+df_ = pd.DataFrame()
+for i in range(70):
+    
+    b = cv2.resize(np.array(res_img[i]),(400, 400))
+    gray = b[:,:,0]
+    fd, hog_img = hog(gray, orientations=16, pixels_per_cell=(16, 16), 
+                      cells_per_block=(2, 2), visualise=True)
+    
+    df_[res_y[i]] = fd
+    
+
+df = df_.T
+df = df.values.astype('float32')
+df = preprocessing.scale(df)
+
+#splitting training and testing sets
+Xtrain, Xtest, ytrain, ytest = train_test_split(df, res_label, test_size=0.2)

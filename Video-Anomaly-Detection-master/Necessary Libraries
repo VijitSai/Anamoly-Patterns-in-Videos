@@ -1,0 +1,45 @@
+import tensorflow as tf
+import numpy as np
+import sys
+from tensorflow import keras
+from tensorflow.keras import datasets, layers, models
+import matplotlib.pyplot as plt
+
+from numpy.random import seed
+seed(1)
+from tensorflow import set_random_seed
+set_random_seed(2)
+
+import cv2
+import os
+import scipy
+import math   # for mathematical operations
+import matplotlib.pyplot as plt    # for plotting the images
+import pandas as pd
+import numpy as np    # for mathematical operations
+#from tensorflow.keras.utils import np_utils
+from skimage.transform import resize   # for resizing images
+from sklearn.model_selection import train_test_split
+from glob import glob
+from tqdm import tqdm
+from tensorflow.keras.preprocessing import image
+from keras.utils.np_utils import to_categorical
+
+
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense, Activation, Dropout, Flatten, Conv2D, MaxPooling2D, AveragePooling2D
+from tensorflow.keras.layers import BatchNormalization
+from tensorflow.keras.preprocessing.image import ImageDataGenerator
+
+
+
+from sklearn.svm import SVC
+from sklearn import neighbors
+from sklearn import preprocessing
+
+
+# example of using a pre-trained model as a classifier
+from tensorflow.keras.applications.vgg16 import preprocess_input
+from tensorflow.keras.applications.vgg16 import decode_predictions
+from tensorflow.keras.applications.vgg16 import VGG16
+from tensorflow.keras.layers import Dense, Activation, Dropout, Flatten, Conv2D, MaxPooling2D, AveragePooling2D
